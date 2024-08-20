@@ -1,7 +1,7 @@
 export class Curso {
     constructor(
-        private id? : number,
-        private nome? : string,
-        private link? : string
+        public id? : number,
+        public nome? : string,
+        public link? : string
     ){}
 }

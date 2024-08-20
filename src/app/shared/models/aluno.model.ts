@@ -1,9 +1,9 @@
 export class Aluno {
     constructor(
-        private id? : number,
-        private nome? : string,
-        private cpf? : string,
-        private email? : string,
-        private dataNascimento? : string
+        public id? : number,
+        public nome? : string,
+        public cpf? : string,
+        public email? : string,
+        public dataNascimento? : string
     ){}
 }
