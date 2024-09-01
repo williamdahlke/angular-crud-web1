@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlunoService } from '../services/aluno.service';
 
 @Component({
   selector: 'app-listar-aluno',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './listar-aluno.component.css'
 })
 export class ListarAlunoComponent {
+  constructor(private service : AlunoService){
 
+  }
 }

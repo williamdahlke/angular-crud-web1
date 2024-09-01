@@ -4,6 +4,8 @@ import { ListarCursoComponent } from './listar-curso/listar-curso.component';
 import { InserirCursoComponent } from './inserir-curso/inserir-curso.component';
 import { EditarCursoComponent } from './editar-curso/editar-curso.component';
 import { CursoService } from './services/curso.service';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,15 +13,14 @@ import { CursoService } from './services/curso.service';
     InserirCursoComponent,
     EditarCursoComponent
   ],
-
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule
   ],
-
   exports: [
     ListarCursoComponent    
   ],
-
   providers: [
     CursoService
   ]
