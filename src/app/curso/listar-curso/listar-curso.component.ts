@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CursoService } from '../services/curso.service';
-import { Router } from '@angular/router';
+import { Curso } from '../../shared/models/curso.model';
 
 @Component({
   selector: 'app-listar-curso',
   templateUrl: './listar-curso.component.html',
   styleUrl: './listar-curso.component.css'
 })
-export class ListarCursoComponent {
-  constructor(service : CursoService){
+export class ListarCursoComponent implements OnInit {
+  constructor(private service : CursoService){
+  }
+
+  cursos : Curso[] = [];
+
+  ngOnInit(): void {
+    this.cursos = this.listarCursos();
+  }
+
+  listarCursos() : Curso[]{
+    return this.service.listarTodos();
   }
 }
