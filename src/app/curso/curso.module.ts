@@ -11,11 +11,17 @@ import { CursoService } from './services/curso.service';
     InserirCursoComponent,
     EditarCursoComponent
   ],
+
   imports: [
     CommonModule
   ],
-  exports: [ListarCursoComponent    
+
+  exports: [
+    ListarCursoComponent    
   ],
-  providers: [CursoService]
+
+  providers: [
+    CursoService
+  ]
 })
 export class CursoModule { }
