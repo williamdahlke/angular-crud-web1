@@ -8,9 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './editar-aluno.component.css'
 })
 export class EditarAlunoComponent implements OnInit {
-  constructor(service : AlunoService,
-              route : ActivatedRoute,
-              router : Router){
+  constructor(private service : AlunoService,
+              private route : ActivatedRoute,
+              private router : Router){
 
   }
   ngOnInit(): void {

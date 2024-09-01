@@ -8,9 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './editar-curso.component.css'
 })
 export class EditarCursoComponent implements OnInit{
-  constructor(service : CursoService,
-              route : ActivatedRoute,
-              router : Router){
+  constructor(private service : CursoService,
+              private route : ActivatedRoute,
+              private router : Router){
 
   }
   
