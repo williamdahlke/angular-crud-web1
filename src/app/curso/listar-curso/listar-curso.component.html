@@ -12,11 +12,25 @@
                     <th>Link</th>
                     <th class="text-center">
                         <a [routerLink]="['/cursos/novo']" href="#" alt="novo" class="btn btn-x btn bg-success">
-                            
+                            <i class="fa fa-plus" aria-hidden="true"></i> Novo
                         </a>
                     </th>                    
                 </tr>
             </thead>
+            <tbody>
+                <tr *ngFor="let curso of cursos">
+                    <td>{{curso.nome}}</td>
+                    <td>{{curso.link}}</td>
+                    <td class="text-center">
+                       <a href="#" alt="Editar" class="btn btn-xs btn-info" [routerLink]="['/cursos/editar', curso.id]">
+                          <i class="fa fa-edit" aria-hidden="true"></i> Editar
+                       </a> 
+                       <a href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger" (click)="remover($event, curso)">
+                          <i class="fa fa-times" aria-hidden="true"></i> Remover
+                       </a>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </body>
 </html>

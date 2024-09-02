@@ -20,4 +20,8 @@ export class ListarCursoComponent implements OnInit {
   listarCursos() : Curso[]{
     return this.service.listarTodos();
   }
+
+  remover($event : any, curso : Curso){
+    
+  }
 }
