@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CursoService } from '../services/curso.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Curso } from '../../shared/models/curso.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-curso',
@@ -13,8 +15,25 @@ export class EditarCursoComponent implements OnInit{
               private router : Router){
 
   }
+
+  @ViewChild('formCurso') formCurso! : NgForm;
+  curso : Curso = new Curso();
   
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    let id = +this.route.snapshot.params['id'];
+    const data = this.service.buscarPorId(id);
+    if (data !== undefined){
+      this.curso = data;
+    } 
+    else{
+      throw new Error("Curso não encontrado para o id: " + id);
+    }    
+  }
+
+  atualizar() : void{
+    if (this.formCurso.form.valid){
+      this.service.alterar(this.curso);
+      this.router.navigate(['/cursos']);
+    }
   }
 }
