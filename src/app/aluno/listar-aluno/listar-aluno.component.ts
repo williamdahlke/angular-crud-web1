@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlunoService } from '../services/aluno.service';
 import { Aluno } from '../../shared/models/aluno.model';
 
+
 @Component({
   selector: 'app-listar-aluno',
   templateUrl: './listar-aluno.component.html',
@@ -20,5 +21,12 @@ export class ListarAlunoComponent implements OnInit{
 
   listarAlunos() : Aluno[]{
     return this.service.listarTodos();
+  }
+
+  remover($event : any, aluno : Aluno){
+    if (aluno.id != undefined) {
+      this.service.remover(aluno.id);
+    }
+    window.location.reload();
   }
 }

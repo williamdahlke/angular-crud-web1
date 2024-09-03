@@ -5,7 +5,54 @@
         <meta charset="utf-8">
     </head>
     <body>
-        
+        <div class="container">
+            <div class="row header">
+                <h1>ALUNOS</h1>
+            </div>
+            <hr>
+            <div class="row row-btn-new">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col col-btn-new">
+                    <a [routerLink]="['/alunos/novo']" href="#" alt="novo" class="btn btn-x btn bg-success btn-new">
+                        <i class="bi bi-plus" aria-hidden="true"></i>Novo
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Data Nascimento</th>
+                        <th scope="col">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let aluno of alunos; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{aluno.nome}}</td>
+                            <td>{{aluno.cpf}}</td>
+                            <td>{{aluno.email}}</td>
+                            <td>{{aluno.dataNascimento}}</td>
+                            <td>
+                                <a href="#" alt="Editar" class="btn btn-xs btn-info" [routerLink]="['/alunos/editar', aluno.id]">
+                                   <i class="bi bi-pencil-square" aria-hidden="true"></i>
+                                </a> 
+                                <a href="#" title="Remover" [routerLink]="['/alunos/listar']" alt="Remover" class="btn btn-xs btn-danger" (click)="remover($event, aluno)">
+                                   <i class="bi bi-trash3" aria-hidden="true"></i>
+                                </a>
+                             </td>
+                        </tr>
+                    </tbody>
+                  </table>
+                  
+            </div>
+          </div>
     </body>
 
 </html>

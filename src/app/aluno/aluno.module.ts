@@ -6,6 +6,7 @@ import { EditarAlunoComponent } from './editar-aluno/editar-aluno.component';
 import { AlunoService } from './services/aluno.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,11 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NgxMaskDirective
   ],
   providers: [
+    provideNgxMask({ /* opções de cfg */ }),
     AlunoService
   ]
 })
