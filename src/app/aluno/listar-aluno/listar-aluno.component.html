@@ -36,9 +36,9 @@
                         <tr *ngFor="let aluno of alunos; let i = index">
                             <td>{{i + 1}}</td>
                             <td>{{aluno.nome}}</td>
-                            <td>{{aluno.cpf}}</td>
+                            <td>{{aluno.cpf! | mask:'000.000.000-00'}}</td>
                             <td>{{aluno.email}}</td>
-                            <td>{{aluno.dataNascimento}}</td>
+                            <td>{{aluno.dataNascimento! | mask: 'd0/M0/0000'}}</td>
                             <td>
                                 <a href="#" alt="Editar" class="btn btn-xs btn-info" [routerLink]="['/alunos/editar', aluno.id]">
                                    <i class="bi bi-pencil-square" aria-hidden="true"></i>

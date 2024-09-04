@@ -24,9 +24,10 @@ export class ListarAlunoComponent implements OnInit{
   }
 
   remover($event : any, aluno : Aluno){
-    if (aluno.id != undefined) {
-      this.service.remover(aluno.id);
-    }
-    window.location.reload();
-  }
+    $event.preventDefault();
+    if (confirm(`Deseja realmente remover o aluno ${aluno.nome}?`)){
+      this.service.remover(aluno.id!);
+      this.alunos = this.listarAlunos();
+    } 
+  } 
 }
