@@ -11,7 +11,7 @@ export class ListarCursoComponent implements OnInit {
   constructor(private service : CursoService){
   }
 
-  cursos : Curso[] = [];
+  cursos : Curso[] = [];      
 
   ngOnInit(): void {
     this.cursos = this.listarCursos();
@@ -22,6 +22,10 @@ export class ListarCursoComponent implements OnInit {
   }
 
   remover($event : any, curso : Curso){
-    
+    $event.preventDefault();
+    if (confirm(`Deseja realmente remover o curso ${curso.nome}?`)){
+      this.service.remover(curso.id!);
+      this.cursos = this.listarCursos();
+    }    
   }
 }
