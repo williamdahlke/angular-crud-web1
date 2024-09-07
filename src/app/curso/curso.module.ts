@@ -18,9 +18,6 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     RouterModule
   ],
-  exports: [
-    ListarCursoComponent    
-  ],
   providers: [
     CursoService
   ]

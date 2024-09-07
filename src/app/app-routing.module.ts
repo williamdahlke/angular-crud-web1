@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EditarCursoComponent, InserirCursoComponent, ListarCursoComponent } from './curso';
-import { EditarAlunoComponent, InserirAlunoComponent, ListarAlunoComponent } from './aluno';
+import * as curso from './curso';
+import * as aluno from './aluno';
 
 const routes: Routes = [
   { path: '',
@@ -10,19 +10,19 @@ const routes: Routes = [
   { path: 'cursos',
     redirectTo: 'cursos/listar'},
   { path: 'cursos/listar',
-    component: ListarCursoComponent},
+    component: curso.ListarCursoComponent},
   { path: 'cursos/novo',
-    component: InserirCursoComponent},
+    component: curso.InserirCursoComponent},
   { path: 'cursos/editar/:id',
-    component: EditarCursoComponent},
+    component: curso.EditarCursoComponent},
   { path: 'alunos',
     redirectTo: 'alunos/listar'},
   { path: 'alunos/listar',
-    component: ListarAlunoComponent},
+    component: aluno.ListarAlunoComponent},
   { path: 'alunos/novo',
-    component: InserirAlunoComponent},
+    component: aluno.InserirAlunoComponent},
   { path: 'alunos/editar/:id',
-    component: EditarAlunoComponent}
+    component: aluno.EditarAlunoComponent}
 ];
 
 @NgModule({
