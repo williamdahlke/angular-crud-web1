@@ -2,9 +2,13 @@
     margin-top: 4%;
 }
 
-.btn-new{
+.col-btn-new{
     margin-top: 2%;    
     margin-bottom: 4%;
+}
+
+.btn-new{
+    color: white;
 }
 
 .btn-edit, 
