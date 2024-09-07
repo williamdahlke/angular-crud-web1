@@ -35,7 +35,7 @@
                 <tr *ngFor="let curso of cursos">
                     <td class="table-text-column">{{curso.nome}}</td>
                     <td class="table-text-column">{{curso.link}}</td>
-                    <td class="text-center">
+                    <td class="text-center align-middle">
                         <a href="#" alt="Editar" class="btn btn-xs btn-info btn-edit"
                             [routerLink]="['/cursos/editar', curso.id]">
                             <i class="fa fa-edit" aria-hidden="true"></i> Editar
