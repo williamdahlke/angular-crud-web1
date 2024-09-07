@@ -33,6 +33,3 @@ Para executar o projeto, é necessário usar o comando abaixo:
   ```
   ng s -o
   ```
-
-## Contribuidores
-
