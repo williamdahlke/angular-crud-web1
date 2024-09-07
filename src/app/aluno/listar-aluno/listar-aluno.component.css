@@ -20,3 +20,22 @@
 .btn-new{
     color: white;
 }
+
+th{ 
+    text-align: center;
+}
+
+td{
+    vertical-align: middle;
+}
+
+.col-cpf,
+.col-dt-nascimento{
+    text-align: center;
+}
+
+.btn-edit, 
+.btn-remove
+{
+    margin: 3% 3% 0 3%;
+}
